@@ -1,6 +1,16 @@
 import React, { useEffect, useState } from "react";
 import "./InfoPopup.css";
 import Accordion from "../Accordion/Accordion";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer
+} from "recharts";
 
 function InfoPopup({ algorithmName }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -156,6 +166,57 @@ function InfoPopup({ algorithmName }) {
                       {info.efficiencyAnalysis.spaceComplexity.notation} —{" "}
                       {info.efficiencyAnalysis.spaceComplexity.reasoning}
                     </p>
+                  </section>
+                )}
+
+                {info.performanceGraph && (
+                  <section>
+                    <h3>Performance Graph</h3>
+                    <ResponsiveContainer width="100%" height={300}>
+                      <LineChart
+                        data={info.performanceGraph}
+                        margin={{ top: 20, right: 30, left: 0, bottom: 5 }}
+                      >
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis
+                          dataKey="numProcesses"
+                          label={{
+                            value: "Number of Processes",
+                            position: "insideBottom",
+                            offset: -5
+                          }}
+                        />
+                        <YAxis
+                          label={{
+                            value: "Time (ms)",
+                            angle: -90,
+                            position: "insideLeft"
+                          }}
+                        />
+                        <Tooltip />
+                        <Legend verticalAlign="top" height={36} />
+                        <Line
+                          type="monotone"
+                          dataKey="averageWaitingTime"
+                          stroke="#8884d8"
+                          name="Avg Waiting Time"
+                        />
+                        <Line
+                          type="monotone"
+                          dataKey="averageCompletionTime"
+                          stroke="#82ca9d"
+                          name="Avg Completion Time"
+                        />
+                      </LineChart>
+                    </ResponsiveContainer>
+                  </section>
+                )}
+
+                {info.graphAnalysis && (
+                  <section>
+                    <h3>Graph Analysis</h3>
+                    <p><strong>Observation:</strong> {info.graphAnalysis.observation}</p>
+                    <p><strong>Reason:</strong> {info.graphAnalysis.reason}</p>
                   </section>
                 )}
 

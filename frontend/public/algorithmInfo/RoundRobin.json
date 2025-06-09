@@ -79,5 +79,19 @@
       "title": "YouTube - Round Robin Scheduling Explained",
       "url": "https://www.youtube.com/watch?v=TxjIlNYRZ5M"
     }
-  ]
+  ],
+  "performanceGraph": [
+  { "numProcesses": 5, "averageWaitingTime": 13.4, "averageCompletionTime": 17.6 },
+  { "numProcesses": 10, "averageWaitingTime": 29.7, "averageCompletionTime": 37.8 },
+  { "numProcesses": 50, "averageWaitingTime": 188.8, "averageCompletionTime": 221.8 },
+  { "numProcesses": 100, "averageWaitingTime": 419.0, "averageCompletionTime": 475.5 },
+  { "numProcesses": 200, "averageWaitingTime": 929.8, "averageCompletionTime": 1019.2 },
+  { "numProcesses": 300, "averageWaitingTime": 1482.2, "averageCompletionTime": 1592.0 },
+  { "numProcesses": 400, "averageWaitingTime": 2063.4, "averageCompletionTime": 2184.7 },
+  { "numProcesses": 500, "averageWaitingTime": 2667.1, "averageCompletionTime": 2792.5 }
+],
+"graphAnalysis": {
+  "observation": "Waiting and completion times grow steadily but more gradually compared to FCFS.",
+  "reason": "Round Robin uses time slicing to give each process a fair share of CPU time. This limits starvation and prevents long jobs from delaying short ones excessively. However, context switching overhead and increased queue management cause overall execution times to still rise with more processes."
+}
 }

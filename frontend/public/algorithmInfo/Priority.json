@@ -79,5 +79,19 @@
       "title": "YouTube - Priority Scheduling Explained",
       "url": "https://www.youtube.com/watch?v=rsDGfFxSgiY"
     }
-  ]
+  ],
+  "performanceGraph": [
+  { "numProcesses": 5, "averageWaitingTime": 7.6, "averageCompletionTime": 11.9 },
+  { "numProcesses": 10, "averageWaitingTime": 16.4, "averageCompletionTime": 24.7 },
+  { "numProcesses": 50, "averageWaitingTime": 96.1, "averageCompletionTime": 133.8 },
+  { "numProcesses": 100, "averageWaitingTime": 206.0, "averageCompletionTime": 277.0 },
+  { "numProcesses": 200, "averageWaitingTime": 441.6, "averageCompletionTime": 573.5 },
+  { "numProcesses": 300, "averageWaitingTime": 689.9, "averageCompletionTime": 877.8 },
+  { "numProcesses": 400, "averageWaitingTime": 946.7, "averageCompletionTime": 1187.4 },
+  { "numProcesses": 500, "averageWaitingTime": 1210.1, "averageCompletionTime": 1500.9 }
+],
+"graphAnalysis": {
+  "observation": "The average waiting and completion times increase, but not strictly linearly with the number of processes.",
+  "reason": "Priority scheduling executes higher-priority processes first. If many low-priority processes accumulate, they suffer longer waiting times, especially when a few high-priority processes keep arriving. This imbalance creates inconsistent growth in average times as the number of processes increases."
+}
 }

@@ -79,5 +79,19 @@
       "title": "YouTube - FCFS Scheduling Explained with Example",
       "url": "https://www.youtube.com/watch?v=MZdVAVMgNpA"
     }
-  ]
+  ],
+  "performanceGraph": [
+    { "numProcesses": 5, "averageWaitingTime": 6.8, "averageCompletionTime": 10.2 },
+    { "numProcesses": 10, "averageWaitingTime": 18.6, "averageCompletionTime": 25.1 },
+    { "numProcesses": 50, "averageWaitingTime": 145.3, "averageCompletionTime": 170.7 },
+    { "numProcesses": 100, "averageWaitingTime": 398.4, "averageCompletionTime": 445.9 },
+    { "numProcesses": 200, "averageWaitingTime": 1620.5, "averageCompletionTime": 1700.2 },
+    { "numProcesses": 300, "averageWaitingTime": 3625.7, "averageCompletionTime": 3750.8 },
+    { "numProcesses": 400, "averageWaitingTime": 6420.9, "averageCompletionTime": 6605.3 },
+    { "numProcesses": 500, "averageWaitingTime": 10015.2, "averageCompletionTime": 10250.6 }
+  ],
+  "graphAnalysis": {
+  "observation": "Both average waiting time and completion time increase rapidly as the number of processes increases.",
+  "reason": "FCFS executes processes strictly in order of arrival, without optimization. Long processes that arrive early cause shorter processes to wait, leading to the convoy effect. This results in poor scalability and sharp increases in average times as the queue grows."
+}
 }

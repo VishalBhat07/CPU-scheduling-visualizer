@@ -80,5 +80,19 @@
       "title": "YouTube - SRTF Scheduling Explained with Example",
       "url": "https://www.youtube.com/watch?v=hoN7_VMzw_g"
     }
-  ]
+  ],
+  "performanceGraph": [
+  { "numProcesses": 5, "averageWaitingTime": 3.7, "averageCompletionTime": 8.2 },
+  { "numProcesses": 10, "averageWaitingTime": 7.5, "averageCompletionTime": 16.6 },
+  { "numProcesses": 50, "averageWaitingTime": 39.4, "averageCompletionTime": 84.8 },
+  { "numProcesses": 100, "averageWaitingTime": 80.4, "averageCompletionTime": 171.4 },
+  { "numProcesses": 200, "averageWaitingTime": 164.1, "averageCompletionTime": 346.5 },
+  { "numProcesses": 300, "averageWaitingTime": 249.2, "averageCompletionTime": 522.9 },
+  { "numProcesses": 400, "averageWaitingTime": 335.1, "averageCompletionTime": 700.2 },
+  { "numProcesses": 500, "averageWaitingTime": 421.7, "averageCompletionTime": 878.2 }
+],
+"graphAnalysis": {
+  "observation": "The increase in average waiting and completion times is relatively moderate and smoother compared to other algorithms.",
+  "reason": "SRTF is a preemptive version of SJF. It always runs the process with the least remaining time, leading to very efficient CPU usage. Preemption allows for dynamic reordering that avoids the convoy effect, especially benefiting shorter jobs. This results in consistently better scalability."
+}
 }

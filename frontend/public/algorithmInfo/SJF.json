@@ -80,5 +80,19 @@
       "title": "YouTube - SJF Scheduling Explained with Example",
       "url": "https://www.youtube.com/watch?v=VCIVXPoiLpU"
     }
-  ]
+  ],
+  "performanceGraph": [
+  { "numProcesses": 5, "averageWaitingTime": 4.9, "averageCompletionTime": 9.3 },
+  { "numProcesses": 10, "averageWaitingTime": 10.1, "averageCompletionTime": 18.8 },
+  { "numProcesses": 50, "averageWaitingTime": 54.7, "averageCompletionTime": 97.3 },
+  { "numProcesses": 100, "averageWaitingTime": 113.3, "averageCompletionTime": 197.4 },
+  { "numProcesses": 200, "averageWaitingTime": 234.6, "averageCompletionTime": 400.2 },
+  { "numProcesses": 300, "averageWaitingTime": 359.1, "averageCompletionTime": 605.3 },
+  { "numProcesses": 400, "averageWaitingTime": 485.7, "averageCompletionTime": 811.7 },
+  { "numProcesses": 500, "averageWaitingTime": 614.0, "averageCompletionTime": 1019.1 }
+],
+"graphAnalysis": {
+  "observation": "Average waiting and completion times grow slowly with more processes, showing more efficient behavior than FCFS.",
+  "reason": "By selecting the shortest job next, SJF minimizes total waiting time in many cases. However, as more jobs accumulate, the need for sorting or comparing burst times still results in growing execution time, though with a much slower slope than FCFS."
+}
 }
