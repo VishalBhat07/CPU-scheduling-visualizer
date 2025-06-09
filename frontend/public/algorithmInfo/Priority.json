@@ -13,7 +13,7 @@
         ]
       },
       "ganttChartImage": "/images/priority_gantt_chart.png",
-      "queueDiagramImage": "/images/priority_queue.png"
+      "queueDiagramImage": "/images/fcfs_queue.png"
     }
   },
   "dataStructures": {
